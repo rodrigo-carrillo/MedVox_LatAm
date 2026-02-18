@@ -23,10 +23,10 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
-### Fine tuning
+### Fine tuning (improvement versus the base model)
 | Model | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity* |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| Whisper Large V3 Fine-Tuned | 0.133642 | 0.081280 | 8.324975e-01 | 0.916292 | 0.951343 | 0.977602 |
+| Whisper Large V3 Fine-Tuned | 0.133642 (+30%) | 0.081280 (+43%) | 8.324975e-01 (+12%) | 0.916292 (+4%) | 0.951343 (+5%) | 0.977602 (+3%) |
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
