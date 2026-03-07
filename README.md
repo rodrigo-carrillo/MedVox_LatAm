@@ -1,4 +1,5 @@
-# Speech2Text Transcription of Latin American Spanish Medical Consultations
+# MedVox LatAm
+## Speech2Text Transcription of Latin American Spanish Medical Consultations
 
 This evaluation assesses the performance of speech-to-text (Speech2Text) models, also known as automatic speech recognition (ASR), in transcribing audios of medical consultations conducted in Spanish from Latin America.
 
