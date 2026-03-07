@@ -11,6 +11,10 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 - The base (vanilla) model which demonstrated the best performance, underwent fine-tuning. We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 10 videos that depicted medical consultations in Spanish from Latin America. Data augmentation was employed to enhance the dataset (AddGaussianNoise, TimeStretch, PitchShift). The augmented data of 10-second clips were utilized in the fine-tuning process, which comprised training, validation, and testing phases in a 70-15-15 ratio. The original human-made transcription served as the ground truth. Finally, the fine-tuned model was applied to the full videos, similar to the base models.
 
 
+## Conclusions:
+The Whisper Large v3 model demonstrated good performance in transcribing videos depicting medical consultations in Spanish from Latin America. A fine-tuned version of Whisper Large v3 significantly enhanced the validation metrics compared to human transcriptions. Our mode, MedVox LatAm outperformed both open-source and close-source models.
+
+
 ## Results:
 
 ### Base models (open-source)
@@ -42,6 +46,3 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
-
-## Conclusions:
-The Whisper Large v3 model demonstrated good performance in transcribing videos depicting medical consultations in Spanish from Latin America. A fine-tuned version of Whisper Large v3 significantly enhanced the validation metrics compared to human transcriptions. Our mode, MedVox LatAm outperformed both open-source and close-source models.
