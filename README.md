@@ -5,7 +5,7 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 
 
 ## Data and Methods:
-- 10 videos depicting medical consultations conducted in Latin America (6 different countries).
+- 10 videos (YouTube) depicting medical consultations conducted in Latin America (6 different countries).
 - Human transcriptions served as the ground truth.
 - Open-source Speech2Text models were tested.
 - The base (vanilla) model which demonstrated the best performance, underwent fine-tuning. We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 10 videos that depicted medical consultations in Spanish from Latin America. Data augmentation was employed to enhance the dataset (AddGaussianNoise, TimeStretch, PitchShift). The augmented data of 10-second clips were utilized in the fine-tuning process, which comprised training, validation, and testing phases in a 70-15-15 ratio. The original human-made transcription served as the ground truth. Finally, the fine-tuned model was applied to the full videos, similar to the base models.
