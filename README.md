@@ -39,9 +39,9 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 ### Base models (close-source) applied to the ten videos
 | Model     | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| GPT-4o-Transcribe | 0.355551 | 0.274422 | 5.95577e-01 | 0.790943 | 0.912620 | 0.946915 |
-| GPT-4o-mini-Transcribe | 0.1972120 | 0.1475670 | 7.214053e-01 | 0.8676300 | 0.9095200 | 0.9484410 |
-| Gemini-3-Flash-Preview | 0.197577 | 0.101842 | 7.84622e-01 | 0.907386 | 0.895780 | 0.957804 |
+| GPT-4o-Transcribe      | 0.355551  | 0.274422  | 5.95577e-01  | 0.790943  | 0.912620  | 0.946915 |
+| GPT-4o-mini-Transcribe | 0.1972120 | 0.1475670 | 7.214053e-01 | 0.8676300 | 0.9095200 | 0.948441 |
+| Gemini-3-Flash-Preview | 0.197577  | 0.101842  | 7.84622e-01  | 0.907386  | 0.895780  | 0.957804 |
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
