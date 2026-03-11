@@ -63,8 +63,7 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 | Whisper_large_v3            | 0.2837 | 0.2056 | 0.6130 | 0.8041 | 0.8701 | 0.8328 |
 | Whisper_large_v3_turbo      | 0.2810 | 0.1949 | 0.6175 | 0.8028 | 0.8347 | 0.7353 |
 | Whisper_large               | 0.7818 | 0.5757 | 0.1904 | 0.2531 | 0.8639 | 0.8328 |
-| Canary_1b_v2                | 0.9995 | 0.9048 | 0.0000 | 0.0018 | 0.5380 | 0.4811 |
+| Canary_1b_v2                | 0.9995 | 0.9048 | 0.0000 | 0.0019 | 0.5380 | 0.4811 |
 | Voxtral_Mini_3B_2507        | 0.9978 | 0.9965 | 0.0000 | 0.0061 | 0.6231 | 0.6168 |
-| Whisper_large_v3 FINE-TUNED | 0.9978 | 0.9965 | 0.0000 | 0.0061 | 0.6231 | 0.6168 |
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
