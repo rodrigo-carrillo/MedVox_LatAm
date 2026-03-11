@@ -10,11 +10,11 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 - Open-source Speech2Text models were tested with the tem videos.
 - The base (vanilla) model which demonstrated the best performance, underwent fine-tuning.
 - Fine-Tuning:
--   We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 9 videos that depicted medical consultations in Spanish from Latin America.
--   Data augmentation was employed to enhance the dataset.
--   The augmented data of 10-second clips were utilized in the fine-tuning process. Per 10-second clip, there were three files.
--   For internal validation, we used leave-one-out (LOO). In each iteration, the 10-second clips from eight videos were used to train the model, and the full-length video not used in training was witheld to compute the validation metrics.
--   The original human-made transcription served as the ground truth.
+  -   We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 9 videos that depicted medical consultations in Spanish from Latin America.
+  -   Data augmentation was employed to enhance the dataset.
+  -   The augmented data of 10-second clips were utilized in the fine-tuning process. Per 10-second clip, there were three files.
+  -   For internal validation, we used leave-one-out (LOO). In each iteration, the 10-second clips from eight videos were used to train the model, and the full-length video not used in training was witheld to compute the validation metrics.
+  -   The original human-made transcription served as the ground truth.
 - Finally, the fine-tuned model was applied to one full video. The video that was not used at all during the training phase. We originally had 10 videos, nine were used during the training with LOO internal validation, whereas one video was never used and reserved for external validation.
 
 
