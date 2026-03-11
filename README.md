@@ -50,7 +50,7 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 | Learning Rate | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity* | Observation |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | 1e-05 | 0.2262 (0.1088) | 0.1484 (0.0806) | 0.6871 (0.1147) | 0.8401 (0.0817) | 0.8952 (0.0467) | 0.9243 (0.0663) | Selected model |
-| 5e-06 | 0.2170 (0.1187) | 0.1489 (0.0988) | 0.6986 (0.1345) | 0.8500 (0.0853) | 0.9104 (0.0400) | 0.9089 (0.0955) | Even though slightly better metrics, the dispersion is larger. I prefer good performance with less variability. |
+| 5e-06 | 0.2170 (0.1187) | 0.1489 (0.0988) | 0.6986 (0.1345) | 0.8500 (0.0853) | 0.9104 (0.0400) | 0.9089 (0.0955) | Even though slightly better metrics, the dispersion is larger. I prefer good performance with less variability (as in the baseline model above). |
 | 2e-05 | 0.3225 (0.2054) | 0.2218 (0.1576) | 0.5799 (0.2007) | 0.7595 (0.1659) | 0.8486 (0.0798) | 0.8318 (0.2010) | Worst model |
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
