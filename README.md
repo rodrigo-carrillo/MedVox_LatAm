@@ -5,10 +5,17 @@ This evaluation assesses the performance of speech-to-text (Speech2Text) models,
 
 
 ## Data and Methods:
-- 10 videos (YouTube) depicting medical consultations conducted in Latin America (6 different countries).
+- Ten videos (YouTube) depicting medical consultations conducted in Latin America (6 different countries).
 - Human transcriptions served as the ground truth.
-- Open-source Speech2Text models were tested.
-- The base (vanilla) model which demonstrated the best performance, underwent fine-tuning. We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 10 videos that depicted medical consultations in Spanish from Latin America. Data augmentation was employed to enhance the dataset (AddGaussianNoise, TimeStretch, PitchShift). The augmented data of 10-second clips were utilized in the fine-tuning process, which comprised training, validation, and testing phases in a 70-15-15 ratio. The original human-made transcription served as the ground truth. Finally, the fine-tuned model was applied to the full videos, similar to the base models.
+- Open-source Speech2Text models were tested with the tem videos.
+- The base (vanilla) model which demonstrated the best performance, underwent fine-tuning.
+- Fine-Tuning:
+-   We utilized the Montreal Forced Aligner (MFA) to generate 10-second clips from the 9 videos that depicted medical consultations in Spanish from Latin America.
+-   Data augmentation was employed to enhance the dataset.
+-   The augmented data of 10-second clips were utilized in the fine-tuning process. Per 10-second clip, there were three files.
+-   For internal validation, we used leave-one-out (LOO). In each iteration, the 10-second clips from eight videos were used to train the model, and the full-length video not used in training was witheld to compute the validation metrics.
+-   The original human-made transcription served as the ground truth.
+- Finally, the fine-tuned model was applied to one full video. The video that was not used at all during the training phase. We originally had 10 videos, nine were used during the training with LOO internal validation, whereas one video was never used and reserved for external validation.
 
 
 ## Conclusions:
@@ -17,7 +24,7 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 
 ## Results:
 
-### Base models (open-source)
+### Base models (open-source) applied to the ten videos -> the best-performing model will undergo fine-tuning.
 | Model     | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | Whisper_large_v3 | 0.174104 | 0.116061 | 7.429227e-01 | 0.882841 | 0.905827 | 0.946515 |
@@ -29,7 +36,7 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
 
-### Base models (close-source)
+### Base models (close-source) applied to the ten videos
 | Model     | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | GPT-4o-Transcribe | 0.355551 | 0.274422 | 5.95577e-01 | 0.790943 | 0.912620 | 0.946915 |
@@ -39,10 +46,12 @@ The Whisper Large v3 model demonstrated good performance in transcribing videos 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
 
-### Fine tuning (improvement versus the base model)
-| Model | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity* |
+### Fine tuning (Whisper Large V3 Fine-Tuned) -> LOO internal validation [mean (standard deviation) across the nine iterations]
+| Learning Rate | WER | CER | BLEU | ROUGE L | BERT | Cosine Similarity* |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| Whisper Large V3 Fine-Tuned | 0.133642 (+30%) | 0.081280 (+43%) | 8.324975e-01 (+12%) | 0.916292 (+4%) | 0.951343 (+5%) | 0.977602 (+3%) |
+| 1e-05 | 0.2262 (0.1088) | 0.1484 (0.0806) | 0.6871 (0.1147) | 0.8401 (0.0817) | 0.8952 (0.0467) | 0.9243 (0.0663) |
+| 5e-06 | 0.2170 (0.1187) | 0.1489 (0.0988) | 0.6986 (0.1345) | 0.8500 (0.0853) | 0.9104 (0.0400) | 0.9089 (0.0955) |
+| 2e-05 | 0.3225 (0.2054) | 0.2218 (0.1576) | 0.5799 (0.2007) | 0.7595 (0.1659) | 0.8486 (0.0798) | 0.8318 (0.2010) |
 
 *sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
